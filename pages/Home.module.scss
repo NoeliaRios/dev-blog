@@ -1,0 +1,62 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.crayonWrapper {
+  max-width: 70%;
+  margin: 2em auto;
+
+  .crayonsStory {
+    background-color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    h3 {
+      font-weight: 800;
+    }
+    h5 {
+      font-weight: 500;
+    }
+  }
+  .crayonsStory:hover {
+    transform: scale(1.05, 1.05);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.inputWrapper {
+  width: 30%;
+  margin: 1em auto;
+  @include center;
+
+  .searchIcon {
+    margin: 0 5px;
+    color: #b5bdc4;
+  }
+
+  .inputSearch {
+    font-family: inherit;
+    width: 100%;
+    margin: 0 auto;
+    border: 0;
+    border-bottom: 2px solid #b5bdc4;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #b5bdc4;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: #b5bdc4;
+    }
+
+    &:placeholder-shown ~ {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 20px;
+    }
+  }
+}
